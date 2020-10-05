@@ -1,0 +1,31 @@
+ <mat-sidenav-container fullscreen>
+   <mat-sidenav mode="side" #sidenav opened position="start" >
+      
+        <mat-nav-list>
+          <li>  <a 
+            [routerLink]="['Create']">
+                <mat-icon> local_grocery_store</mat-icon><span class="nav-caption">New Idea</span>
+            </a></li>
+            <li>
+            <a  [routerLink]="['View']">
+                <mat-icon>home</mat-icon><span class="nav-caption">Dashboard</span>   
+            </a></li>
+          <li>   <a [routerLink]="['']">
+                
+                <mat-icon>settings</mat-icon><span class="nav-caption">Project Listing</span>
+            </a> </li>
+          </mat-nav-list>    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          
+          <mat-icon>menu</mat-icon>
+        </button>
+        Idea To Growth
+      </mat-toolbar>
+      
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
