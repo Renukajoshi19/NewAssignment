@@ -1,0 +1,111 @@
+<mat-card style="background-color:whitesmoke">
+    <mat-card-title>New Idea</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Project Theme</mat-label>
+            <input matInput formControlName="theme">
+            <mat-error *ngIf="form.get('theme').errors?.required">
+               required
+            </mat-error>
+          </mat-form-field>
+          
+        </p>
+            <p>
+            <mat-form-field>
+              <mat-label> Roots</mat-label>
+              <mat-select formControlName="roots">
+                <mat-option value="Business Plan">Business Plan</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('roots').errors?.required">
+                 required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label> Types</mat-label>
+                <mat-select formControlName="type">
+                  <mat-option value="TDR">TDR</mat-option>
+                  <mat-option value="FRP">FRP</mat-option>
+                  <mat-option value="Six Sigma">Six Sigma</mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="form.get('type').errors?.required">
+                   required
+                </mat-error>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label> Division</mat-label>
+                <mat-select formControlName="division">
+                  <mat-option value="PlatForm">PlatForm</mat-option>
+                  <mat-option value="Refrigeratir">Refrigeratir</mat-option>
+                  <mat-option value="Air Conditioner">Six Sigma</mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="form.get('division').errors?.required">
+                   required
+                </mat-error>
+              </mat-form-field>
+  
+          </p>
+          <mat-form-field>
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+              <mat-option value="Quality A">Quality A</mat-option>
+              <mat-option value="Quality B">Quality B</mat-option>
+              <mat-option value="Quality C">Quality C</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('category').errors?.required">
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label> 4M</mat-label>
+            <mat-select formControlName="M">
+              <mat-option value="Man">Man</mat-option>
+              </mat-select>
+            <mat-error *ngIf="form.get('M').errors?.required">
+            </mat-error>
+          </mat-form-field>
+         
+          <mat-form-field>
+            <mat-label> Department</mat-label>
+            <mat-select formControlName="department">
+              <mat-option value="Strategy">Strategy</mat-option>
+              </mat-select>
+            <mat-error *ngIf="form.get('department').errors?.required">
+            </mat-error>
+          </mat-form-field>
+         
+          <p>
+            <mat-form-field>
+  
+              <mat-label>Location</mat-label>
+              <mat-select formControlName="location">
+                <mat-option value="Pune">Pune</mat-option>
+                <mat-option value="Mumbai">Mumbai</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('location').errors?.required">
+                Education is required
+              </mat-error>
+            </mat-form-field>
+          </p>
+  
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Project Need(Optional)</mat-label>
+              <input matInput formControlName="projectneed">
+             
+              <mat-error *ngIf="form.get('projectneed')">
+  
+              </mat-error>
+  
+  
+            </mat-form-field>
+          </p>
+          <div class="button">
+            <button type="submit" mat-raised-button color="primary">SUBMIT</button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

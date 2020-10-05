@@ -1,0 +1,46 @@
+<div class="container">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <table class="table table-bordered" style="background-color:whitesmoke; ">
+     <thead>
+        <tr colspan=11 >project</tr>
+        <tr>
+          <mat-form-field>
+          <mat-select placeholder="Search" [(ngModel)]="selectedValue" name="a">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let a of data" [value]="a.theme">
+                {{a.theme}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <th item-width="200">theme</th>
+        <th item-width="200"> roots</th>
+        <th item-width="200">category</th>
+        <th item-width="200">type </th>
+        <th item-width="200">Bond</th>
+        <th item-width="200"> division</th>
+        
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let e of data;let i=index">
+          <ng-container *ngIf="selectedValue==e.theme ||selectedValue=='all'">
+  
+          <tr *ngIf="e">
+            <td>{{e.theme}}</td>
+            <td>{{e.roots}}</td>
+            <td>{{e.category}}</td>
+            <td>{{e.type}}</td>
+            <td>{{e.division}}</td>
+
+           <td>
+              <button mat-flat-button color="primary" (click)="edit(e)" (click)="openDialog()">Edit</button>
+              <button mat-flat-button color="warn" (click)="deleteData(e.theme)">Delete</button>
+  
+            </td>
+          </tr>
+        </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
